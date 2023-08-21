@@ -19,5 +19,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@bookmarkapp.co',
             'password' => \bcrypt('admin'),
         ]);
+
+        \App\Models\Bookmark::factory(10)->create();
     }
 }
