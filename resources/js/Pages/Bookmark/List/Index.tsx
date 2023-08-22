@@ -1,25 +1,29 @@
+import Layout from "@/Components/common/layout";
 import React from "react";
 
 interface Props {
-    bookmarks : Array<any>
+    bookmarks: Array<any>;
 }
 
-
-const BookmarkListPage:React.FC<Props> = ({bookmarks}) => {
-    return(
-        <div>
-            <ul className="list-group">
-
-                {bookmarks.length > 0 && bookmarks.map((bookmark, index) => {
-                    return (
-                    <li className="list-group-item" key={index}>
-                            <p>Title: {bookmark.title}</p>
-                    </li>
-                    )
-                })}
-            </ul>
-        </div>
-    )
+const BookmarkListPage: React.FC<Props> = ({ bookmarks }) => {
+    return (
+        <Layout>
+            <div className="row">
+                <div className="col-sm-8">
+                    <ul className="list-group">
+                        {bookmarks.length > 0 &&
+                            bookmarks.map((bookmark, index) => {
+                                return (
+                                    <li className="list-group-item" key={index}>
+                                        <p>Title: {bookmark.title}</p>
+                                    </li>
+                                );
+                            })}
+                    </ul>
+                </div>
+            </div>
+        </Layout>
+    );
 };
 
 export default BookmarkListPage;
