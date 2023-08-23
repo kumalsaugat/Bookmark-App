@@ -3,12 +3,7 @@ import React, { useState } from "react";
 import { Inertia } from '@inertiajs/inertia';
 
 
-
-interface Props {
-
-}
-
-const BookmarkAddPage: React.FC<Props> = () => {
+const BookmarkAddPage: React.FC = () => {
     const [state, setState] = useState({
         link: "",
         title: "Some Hardcoded Title"

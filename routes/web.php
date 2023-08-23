@@ -37,8 +37,9 @@ Route::middleware('auth')->group(function () {
     //Bookmarks
     Route::get('/bookmarks', [App\Http\Controllers\BookmarkController::class, 'index'])->name('bookmarks.index');
     Route::get('/bookmark/add', [App\Http\Controllers\BookmarkController::class, 'add'])->name('bookmark.add');
+    Route::get('/bookmark/view/{bookmark}', [App\Http\Controllers\BookmarkController::class, 'view'])->name('bookmark.view');
     Route::post('/bookmark/preview', [App\Http\Controllers\BookmarkController::class, 'getPreviewData'])->name('bookmark.getPreviewData');
-
+    Route::post('/bookmark/make-active',[App\Http\Controllers\BookmarkController::class, 'makeActive'])->name('bookmark.active');
 
 });
 
