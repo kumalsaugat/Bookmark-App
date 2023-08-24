@@ -1,4 +1,5 @@
 import Layout from "@/Components/common/layout";
+import { InertiaLink } from "@inertiajs/inertia-react";
 import React from "react";
 
 interface Props {
@@ -15,7 +16,12 @@ const BookmarkListPage: React.FC<Props> = ({ bookmarks }) => {
                             bookmarks.map((bookmark, index) => {
                                 return (
                                     <li className="list-group-item" key={index}>
-                                        <p>Title: {bookmark.title}</p>
+                                        <div>
+                                            <InertiaLink href={route('bookmark.view', {bookmark:bookmark.id})}>{bookmark.title}</InertiaLink>
+                                            <br />
+                                            <span>{bookmark.description}</span>
+
+                                        </div>
                                     </li>
                                 );
                             })}

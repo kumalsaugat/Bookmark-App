@@ -1,4 +1,5 @@
 import React, {ReactNode} from "react";
+import Menu from "../nav";
 
 interface Props {
     children: ReactNode;
@@ -6,7 +7,15 @@ interface Props {
 
 
 const Layout:React.FC<Props> = ({ children }) => {
-    return <div className="container">{children}</div>
+    return (
+    <>
+        <div className="mb-3">
+            <Menu />
+            <div className="container"> {children}</div>
+
+        </div>
+    </>
+    );
 };
 
 export default Layout;
