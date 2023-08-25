@@ -11,7 +11,7 @@ export default function Authenticated({ user, header, children }: PropsWithChild
 
     return (
         <div className="min-h-screen bg-gray-100">
-            <nav className="bg-white border-b border-gray-100">
+            <nav className="bg- border-b border-gray-100">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between h-16">
                         <div className="flex">
@@ -25,6 +25,13 @@ export default function Authenticated({ user, header, children }: PropsWithChild
                                 <NavLink href={route('dashboard')} active={route().current('dashboard')}>
                                     Dashboard
                                 </NavLink>
+                                <NavLink href={route('bookmarks.index')} active={route().current('bookmarks.index')}>
+                                Bookmark
+                                </NavLink>
+                                <NavLink href={route('bookmark.add')} active={route().current('bookmark.add')}>
+                                Bookmark Add
+                                </NavLink>
+
                             </div>
                         </div>
 

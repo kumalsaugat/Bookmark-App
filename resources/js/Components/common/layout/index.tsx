@@ -1,6 +1,5 @@
 import React, {ReactNode} from "react";
 import Menu from "../nav";
-
 interface Props {
     children: ReactNode;
 }
